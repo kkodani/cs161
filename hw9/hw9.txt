@@ -1,0 +1,74 @@
+HW9
+Kyle Kodani
+
+1.
+constraint on D:
+true=.008942
+false=.991058
+
+OR
+
+constraint on T:
+false-positive=.002322
+false-negative=.005966
+
+
+2.
+i)
+Given:
+LightSensor=On
+SoundSensor=Off
+
+Assumed:
+DogBowelTrouble=Yes
+HearableBarking=No
+DogBarking=No
+FamilyHome=No
+ExpectingGuests=No
+DogOutside=Yes
+OutdoorLight=On
+SoundSensorHealth=OK
+LightSensorHealth=OK
+Battery=OK
+
+How:
+Using the EM network, set the given variables to their given values.
+Show the monitors for the rest of the nodes and assume the value 
+with the higher probability.
+
+
+ii)
+Given:
+FamilyHome=Yes
+ExpectingGuests=No
+
+Assumed:
+DogBowelTrouble=Yes
+HearableBarking=No
+DogOutside=Yes
+OutdoorLight=Off
+DogBarking=No
+SoundSensorHealth=OK
+LightSensorHealth=OK
+Battery=OK
+LightSensor=Off
+SoundSensor=Off
+
+How:
+Using the EM network, set the given variables to their given values.
+Show the monitors for the rest of the nodes and assume the value 
+with the higher probability.
+
+
+iii)
+Z={Battery,DogBarking}
+There are effectively two paths from sensor to sensor.
+One is just battery, the other path involves multiple nodes.
+To separate the sensors, we must close at least one valve in each path.
+SoundSensor<-Battery->LightSensor becomes closed when Battery is known.
+DogOutside->DogBarking->SoundSensor becomes closed when DogBarking is known.
+Both paths have a closed valve, thus the sensors are independent.
+
+
+iv)
+This is a multiply-connected network.

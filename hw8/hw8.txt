@@ -1,0 +1,91 @@
+Kyle Kodani
+CS 161 HW 8
+
+1.
+Pr(A,B|K)=Pr(A|K,B|K)
+	 =Pr((A|K)|(B|K))Pr(B|K)
+	 =Pr(A|B,K)Pr(B|K)
+
+2.
+O=oil
+G=gas
+N=nothing
+Y=yes
+N=no
+
+Mat  Pos  Pr
+O    Y   .45
+O    N   .05
+G    Y   .06
+G    N   .14
+N    Y   .03
+N    N   .27
+
+Pr(P=Y)=.54
+Pr(M=O|P=Y)=.45/.54=.833333=5/6
+
+ANSWER=5/6
+
+3.
+1=1
+2=2
+S=square
+C=circle
+b=black
+w=white
+
+World  Num  Shape  Color  Pr
+1      1    S      B      2/13
+2      1    S      W      1/13
+3      1    C      B      1/13
+4      1    C      W      1/13
+5      2    S      B      4/13
+6      2    S      W      1/13
+7      2    C      B      2/13
+8      2    C      W      1/13
+
+α1=sum of worlds 1, 3, 5, 7=9/13
+α2=sum of worlds 1, 2, 4, 5=8/13
+α3=7/11
+   Pr(Num=1 or Color=B)=sum of worlds 1, 2, 3, 4, 5, 7=11/13
+   Pr(Shape=S | Num=1 or Color=B)=(7/13)/(11/13)=7/11
+
+given the color is white, the number being 1 is independent of the shape being a circle
+given the color is black, the number being 2 is independent of the shape being a square
+
+4.
+(a)
+I(A, Ø, {B,E})
+I(B, Ø, {A,C})
+I(C, {A}, {D,B,E})
+I(D, {A,B}, {C,E})
+I(E, {B}, {A,C,F,D,G})
+I(F, {C,D}, {E})
+I(G, {F}, {H,E})
+I(H, {E,F}, {G})
+
+(b)
+False.  H is not closed.  open path: A-C-F-H-E
+False.  D is open when it is a convergent valve (ADB).  open path: G-F-C-A-D-B-E
+True.  all paths use closed valve at some point.
+
+(c)
+Pr(a|b,c,d,e,f,g,h) * Pr(b|c,d,e,f,g,h) * Pr(c|d,e,f,g,h) *
+Pr(d|e,f,g,h) * Pr(e|f,g,h) * Pr(f|g,h) * Pr(g|h) x Pr(h)
+
+(d)
+A  B  Pr
+1  1  .14
+1  0  .06
+0  1  .56
+0  0  .24
+Pr(A=0,B=0)=.24
+
+Pr(B=0|A=1)=Pr(B=0 and A=1)/Pr(A=1)
+	   =.3
+Pr(B=1|A=1)=Pr(B=1 and A=1)/Pr(A=1)
+	   =.7
+.3*.9=.27
+.7*.1=.07
+.27+.07=.34
+Pr(E=1|A=1)=.34

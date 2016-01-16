@@ -1,0 +1,53 @@
+>>(dfs '((A (B)) C (D)))
+(A B C D)
+
+>>(dfs '((a b) (c d)))
+(A B C D)
+
+>>(dfs '((a b (c) d)))
+(A B C D)
+
+>>(dfs '(A (B C) (D) (E (F G))))
+(A B C D E F G)
+
+
+
+>>(dfid '((A (B)) C (D)) 3))
+(C A C D A B C D)
+
+>>(dfid '((A (B)) C (D)) 2))
+(C A C D)
+
+>>(dfid '((A (B)) C (D)) 1))
+(C)
+
+>>(dfid '((A (B)) C (D)) 0))
+NIL
+
+>>(dfid '((A (B)) C (D)) 4))
+(C A C D A B C D A B C D)
+
+>>(dfid '(A (B C) (D) (E (F G))) 1)
+(A)
+
+>>(dfid '(A (B C) (D) (E (F G))) 2)
+(A A B C D E)
+
+>>(dfid '(A (B C) (D) (E (F G))) 3)
+(A A B C D E A B C D E F G)
+
+>>(dfid '(A (B C) (D) (E (F G))) 4)
+(A A B C D E A B C D E F G A B C D E F G)
+
+>>(dfid '((A (B)) C (D)) 4)
+(C A C D A B C D A B C D)
+
+>>(dfid '((A (B)) C (D)) 3)
+(C A C D A B C D)
+
+>>(dfid '((A (B)) C (D)) 2)
+(C A C D)
+
+>>(dfid '((A (B)) C (D)) 1)
+(C)
+

@@ -1,0 +1,52 @@
+Kyle Kodani	hw7.txt
+
+1.
+a) {x/A, y/B, z/B}
+b) no unifier
+c) {x/B, y/A}
+d) {x/John, y/John}
+e) no unifier
+
+2.
+a)
+Ax(food(x)=>like(John,x))
+food(Apples)
+food(Chicken)
+AxAy((eat(y,x)&~kill(x,y))=>food(x))
+AxAy(kill(x,y)=>~alive(y))
+eat(Bill,Peanuts)&alive(Bill)
+Ax(eats(Bill,x)=>eats(Sue,x))
+
+b)
+1)~food(x)|like(John,x)
+2)food(Apples)
+3)food(Chicken)
+4)~eat(y,x)|kill(x,y)|food(x)
+5)~kill(x,y)|~alive(y)
+6a)eat(Bill,Peanuts)
+6b)alive(Bill)
+7)~eats(Bill,x)|eats(Sue,x)
+
+c)
+8)~like(John,Peanuts) 
+9)~food(Peanuts) 1,8
+10)~eat(y,Peanuts)|kill(Peanuts,y) 9,4
+11)kill(Peanuts,Bill) 6a,10
+12)~alive(Bill) 11,5
+13)contradiction 12,6b
+
+d)
+8)~eats(Sue,x)
+9)~eats(Bill,x) 8,7
+10)contradiction 6a,9
+
+e)
+6a)eat(y,x)|die(y)
+6b)~die(y)|~alive(y)
+6c)alive(Bill)
+7)~eats(Bill,x)|eats(Sue,x)
+8)~eats(Sue,x)
+9)~eats(Bill,x) 8,7
+10)die(Bill) 9,6a
+11)~alive(Bill) 6b,10
+12)contradiction 6c,11
